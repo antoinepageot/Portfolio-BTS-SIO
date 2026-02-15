@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Antoine Pageot</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <img src="images/logo.jpg" alt="Logo Pageot">
+      <p class="brand">Antoine Pageot</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#hero">Accueil</a></li>
+        <li><a href="#about">Profil</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#e5">E5 - Missions</a></li>
+        <li><a href="#veille">Veille technologique</a></li>
+        <li><a href="#e6">E6 - Épreuve pratique</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero">
+    <img src="images/page_accueille.jpg" alt="Image d’accueil" class="hero-img">
+    <div class="hero-text">
+      <h1>Bienvenue sur mon portfolio professionnel</h1>
+      <p>Étudiant en BTS SIO option SISR – Alternant chez IPACS</p>
+      <a href="#e5" class="btn">Découvrir mes missions</a>
+    </div>
+  </section>
+
+  <!-- PROFIL -->
+  <section id="about">
+    <h2>Profil</h2>
+    <div class="about-content">
+      <img src="images/profil.jpg" alt="Photo de profil" class="profil-img">
+      <div>
+        <p>
+          Je m'appelle Antoine Pageot, titulaire d’un <strong>Bac Systèmes Numériques</strong> 
+          et actuellement en <strong>BTS Services Informatiques aux Organisations (SISR)</strong>.
+        </p>
+        <p>
+          En alternance chez <strong>IPACS</strong>, je participe au support des utilisateurs 
+          par téléphone et par email.
+        </p>
+        <p>
+          Rigoureux et orienté service, je souhaite développer des compétences solides 
+          en administration système et cybersécurité.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPETENCES -->
+  <section id="skills">
+    <h2>Compétences techniques</h2>
+    <ul class="skills-list">
+      <li>Support utilisateurs niveaux 1 & 2</li>
+      <li>Diagnostic incidents matériels et logiciels</li>
+      <li>Installation et maintenance Windows</li>
+      <li>Notions Windows Server & Active Directory</li>
+      <li>Bases réseaux : LAN, VLAN, IP</li>
+      <li>Cybersécurité & RGPD</li>
+      <li>Microsoft 365</li>
+      <li>Cisco Packet Tracer</li>
+      <li>Visual Studio Code</li>
+    </ul>
+  </section>
+
+  <!-- E5 -->
+  <section id="e5">
+    <h2>Épreuve E5 – Missions professionnelles</h2>
+    <div class="project-card">
+      <h3>Installation d’un contrôleur de domaine (Active Directory)</h3>
+      <p>
+        Installation et configuration d’un serveur Windows Server avec déploiement Active Directory,
+        gestion des utilisateurs, groupes et stratégies GPO.
+      </p>
+      <ul>
+        <li>Installation Windows Server</li>
+        <li>Configuration Active Directory</li>
+        <li>Gestion des permissions</li>
+        <li>Tests de connectivité</li>
+      </ul>
+      <a href="docs/mission-active-directory.pdf" class="btn-dark" target="_blank">
+        Consulter la mission complète
+      </a>
+    </div>
+  </section>
+
+<!-- VEILLE -->
+<section id="veille">
+  <h2>Veille technologique – Zero Trust Security</h2>
+  <p>
+    Pour ma veille technologique sur deux ans, j’ai choisi le sujet <strong>Zero Trust Security</strong>. 
+    Le principe central : <strong>Ne jamais faire confiance, toujours vérifier.</strong>
+    Toutes les illustrations et schémas sont disponibles dans le PDF.
+  </p>
+
+  <div class="project-card">
+    <h3>Axes de veille et objectifs</h3>
+    <ul>
+      <li>Comprendre le modèle Zero Trust et ses standards (NIST 800-207)</li>
+      <li>Étudier la segmentation réseau et la micro-segmentation</li>
+      <li>Mettre en place et analyser l’authentification forte (MFA, 2FA)</li>
+      <li>Découvrir les solutions déployées par Microsoft, Cisco et Google</li>
+      <li>Suivre les évolutions des architectures cloud et SASE intégrant le Zero Trust</li>
+    </ul>
+  </div>
+
+<a href="veille.html" target="_blank" class="btn-dark">
+  Consulter la veille complète</a>
+  </a>
+</section>
+
+<!-- E6 -->
+<section id="e6">
+  <h2>Épreuve E6 – Mise en situation</h2>
+
+  <div class="project-card">
+    <h3>Actions réalisées</h3>
+    <ul>
+      <li>Configuration et gestion d’Active Directory</li>
+      <li>Paramétrage des services DNS et DHCP</li>
+      <li>Création et gestion de VLAN</li>
+      <li>Configuration et supervision d’un pare-feu</li>
+      <li>Diagnostic et résolution d’incidents réseau</li>
+    </ul>
+    <p>
+      Cette épreuve permet de démontrer mes compétences pratiques en administration système et réseau, 
+      ainsi que ma capacité à résoudre des problèmes réels dans un environnement professionnel.
+    </p>
+  </div>
+</section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <h2>Certifications</h2>
+
+    <div class="project-card">
+      <h3>Cisco – Notions de base sur les réseaux</h3>
+      <p>Fondamentaux réseaux : IP, OSI, VLAN, routage.</p>
+      <a href="docs/cisco-reseaux.pdf" target="_blank" class="btn-dark">
+        Voir le certificat
+      </a>
+    </div>
+
+    <div class="project-card">
+      <h3>Cisco – Introduction à la cybersécurité</h3>
+      <p>Menaces informatiques, protection des systèmes et bonnes pratiques.</p>
+      <a href="docs/cisco-cyber.pdf" target="_blank" class="btn-dark">
+        Voir le certificat
+      </a>
+    </div>
+
+    <div class="project-card">
+      <h3>ANSSI – SecNumAcadémie</h3>
+      <p>MOOC cybersécurité validé avec succès (4 modules).</p>
+      <a href="docs/secnumacademie-mooc.pdf" target="_blank" class="btn-dark">
+        Voir le certificat
+      </a>
+    </div>
+
+    <div class="project-card">
+      <h3>Club EBIOS – Introduction à EBIOS Risk Manager</h3>
+      <p>Formation à l’analyse de risques (3 heures).</p>
+      <a href="docs/ebios-risk-manager.pdf" target="_blank" class="btn-dark">
+        Voir le certificat
+      </a>
+    </div>
+
+  </section>
+
+  <!-- CV -->
+  <section id="cv">
+    <h2>Curriculum Vitae</h2>
+    <a href="docs/Cv.pdf" target="_blank" class="btn-dark">
+      Télécharger le CV
+    </a>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email : <a href="mailto:antoinepageot.pro@gmail.com">antoinepageot.pro@gmail.com</a></p>
+    <p>Téléphone : 07 76 02 15 55</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 - Antoine Pageot | Portfolio BTS SIO</p>
+  </footer>
+
+</body>
+</html>

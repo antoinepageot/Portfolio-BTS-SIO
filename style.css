@@ -1,0 +1,391 @@
+/* =====================
+   RESET
+===================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =====================
+   GLOBAL
+===================== */
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  background: #f5f6fa;
+  color: #333;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+section {
+  padding: 70px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* =====================
+   HEADER
+===================== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #1e1e1e;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 42px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.brand {
+  font-weight: bold;
+}
+
+.header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+}
+
+.header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.header nav ul li a:hover {
+  color: #f39c12;
+}
+
+/* =====================
+   HERO
+===================== */
+#hero {
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-img {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  filter: brightness(55%);
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 750px;
+  padding: 20px;
+}
+
+.hero-text h1 {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.hero-text p {
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+/* =====================
+   BOUTONS
+===================== */
+
+/* Bouton orange principal */
+.btn {
+  display: inline-block;
+  background-color: #f39c12;
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  border: 2px solid #f39c12;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #d35400;
+  border-color: #d35400;
+  transform: translateY(-2px);
+}
+
+/* Bouton noir avec contour orange */
+.btn-dark {
+  display: inline-block;
+  background-color: #000;
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  border: 2px solid #f39c12;
+  transition: all 0.3s ease;
+}
+
+.btn-dark:hover {
+  background-color: #f39c12;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* =====================
+   PROFIL
+===================== */
+#about .about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  align-items: center;
+}
+
+.profil-img {
+  width: 180px;
+  border-radius: 50%;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* =====================
+   COMPETENCES
+===================== */
+#skills .skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  list-style: none;
+  margin-top: 20px;
+}
+
+#skills .skills-list li {
+  background: #fff;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  text-align: center;
+  font-weight: 500;
+}
+
+/* =====================
+   CARTES
+===================== */
+.project-card {
+  background: #fff;
+  padding: 25px;
+  margin: 25px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.project-card h3 {
+  color: #f39c12;
+  margin-bottom: 10px;
+}
+
+.project-card ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.project-card ul li {
+  margin-bottom: 6px;
+}
+
+/* =====================
+   CONTACT
+===================== */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+}
+
+.contact-form button {
+  background: #f39c12;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background: #d35400;
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+  background: #1e1e1e;
+  color: #fff;
+  text-align: center;
+  padding: 25px;
+  margin-top: 50px;
+}
+
+footer .socials {
+  margin-top: 12px;
+}
+
+footer .socials a {
+  color: #f39c12;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer .socials a:hover {
+  color: #fff;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .header nav ul {
+    flex-direction: column;
+    background: #1e1e1e;
+    position: absolute;
+    right: 0;
+    top: 65px;
+    width: 100%;
+  }
+
+  #about .about-content {
+    justify-content: center;
+    text-align: center;
+  }
+}
+#certifications h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#certifications .project-card {
+  text-align: left;
+}
+/* =====================
+   VEILLE TECHNOLOGIQUE
+===================== */
+#veille-detail h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #f39c12;
+}
+
+#veille-detail p {
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+}
+
+#veille-detail ul {
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+#veille-detail ul li {
+  margin-bottom: 8px;
+  padding-left: 8px;
+  position: relative;
+}
+
+#veille-detail ul li::before {
+  content: "•";
+  color: #f39c12;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+#veille-detail p strong {
+  color: #1e1e1e;
+}
+
+/* Section des images */
+.veille-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.veille-images img {
+  max-width: 45%;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.veille-images img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* Timeline / cartes */
+#veille-detail ul li.timeline-item {
+  background: #fff3e0;
+  border-left: 4px solid #f39c12;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+/* Emojis / titres */
+#veille-detail p strong::before {
+  display: inline-block;
+  margin-right: 6px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .veille-images img {
+    max-width: 100%;
+  }
+}
