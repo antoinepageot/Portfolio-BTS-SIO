@@ -4,20 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio - Antoine Pageot</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="icon" href="images/favicon.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
 
   <!-- HEADER -->
   <header class="header">
     <div class="logo">
-      <img src="images/logo.jpg" alt="Logo Pageot">
+      <img src="images/logo.jpg" alt="Logo Pageot" loading="lazy">
       <p class="brand">Antoine Pageot</p>
     </div>
-    <nav>
+    <nav aria-label="Menu principal">
       <ul>
         <li><a href="#hero">Accueil</a></li>
         <li><a href="#about">Profil</a></li>
@@ -33,8 +34,9 @@
   </header>
 
   <!-- HERO -->
+  <main id="main-content">
   <section id="hero">
-    <img src="images/page_accueille.jpg" alt="Image d’accueil" class="hero-img">
+    <img src="images/page_accueille.jpg" alt="Image d’accueil" class="hero-img" loading="lazy">
     <div class="hero-text">
       <h1>Bienvenue sur mon portfolio professionnel</h1>
       <p>Étudiant en BTS SIO option SISR – Alternant chez IPACS</p>
@@ -46,7 +48,7 @@
   <section id="about">
     <h2>Profil</h2>
     <div class="about-content">
-      <img src="images/profil.jpg" alt="Photo de profil" class="profil-img">
+      <img src="images/profil.jpg" alt="Photo de profil" class="profil-img" loading="lazy">
       <div>
         <p>
           Je m'appelle Antoine Pageot, titulaire d’un <strong>Bac Systèmes Numériques</strong> 
@@ -203,6 +205,8 @@
   <footer>
     <p>&copy; 2026 - Antoine Pageot | Portfolio BTS SIO</p>
   </footer>
+
+</main>
 
 </body>
 </html>
