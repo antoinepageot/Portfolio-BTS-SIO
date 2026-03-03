@@ -1,112 +1,219 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Veille Technologique - Antoine Pageot</title>
-  <link rel="stylesheet" href="css/main.css">
+  <meta name="description" content="Veille technologique BTS SIO SISR - Zero Trust Security - Antoine Pageot" />
+  <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
 
-  <header class="header">
-    <div class="logo">
-      <img src="images/logo.jpg" alt="Logo Pageot" loading="lazy">
+  <!-- =====================
+       HEADER
+  ===================== -->
+<header class="header">
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/logo.jpg" alt="Logo Pageot" loading="lazy" />
       <p class="brand">Antoine Pageot</p>
-    </div>
-    <nav aria-label="Menu principal">
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="veille.html">Veille technologique</a></li>
-      </ul>
-    </nav>
-  </header>
+    </a>
+  </div>
 
+  <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+
+  <nav aria-label="Menu principal">
+    <ul>
+      <li><a href="index.html#hero">Accueil</a></li>
+      <li><a href="index.html#about">Profil</a></li>
+      <li><a href="index.html#skills">Compétences</a></li>
+      <li><a href="index.html#e5">E5 - Missions</a></li>
+      <li><a href="veille.html">Veille technologique</a></li>
+      <li><a href="index.html#e6">E6 - Épreuve pratique</a></li>
+      <li><a href="index.html#certifications">Certifications</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.header nav');
+
+  menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    const expanded = menuToggle.getAttribute("aria-expanded") === "true" || false;
+    menuToggle.setAttribute("aria-expanded", !expanded);
+  });
+
+  // Fermer le menu après clic sur un lien
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('active');
+      menuToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+</script>
+
+  <!-- =====================
+       VEILLE DETAIL
+  ===================== -->
   <section id="veille-detail">
     <h1>Veille Technologique – BTS SIO option SISR – Antoine Pageot</h1>
 
-    <p>🔎 <strong>Qu’est-ce que la veille technologique ?</strong></p>
-    <p>La veille technologique, élément de la veille stratégique, consiste à surveiller les évolutions techniques et les innovations dans un secteur d’activité donné.
-       Elle comprend la collecte, l’analyse et la diffusion d’informations permettant d’anticiper les changements liés aux nouvelles technologies, aux nouvelles menaces informatiques ou aux solutions de sécurité émergentes.
-       Son objectif est d’évaluer l’impact de ces évolutions sur l’organisation et son système d’information afin d’adapter les infrastructures et les stratégies de sécurité.</p>
+    <h2>🎯 Sujet de veille : Zero Trust Security</h2>
+    <p>
+      Ma veille technologique porte sur le modèle Zero Trust Security,
+      une approche moderne de cybersécurité basée sur le principe :
+      <strong>« Ne jamais faire confiance, toujours vérifier ».</strong>
+    </p>
+    <p>
+      Ce modèle est formalisé dans la publication
+      <strong>NIST Special Publication 800-207</strong>,
+      publiée par le National Institute of Standards and Technology (NIST).
+    </p>
 
-    <p>🛡️ <strong>Mon sujet de veille : Zero Trust Security</strong></p>
-    <p>Le Zero Trust Security (ou modèle de sécurité « Zéro Confiance ») est un concept de cybersécurité basé sur un principe simple :
-       Ne jamais faire confiance, toujours vérifier.
-       Ce modèle a été introduit en 2010 par John Kindervag, analyste chez Forrester Research.
-       Contrairement au modèle de sécurité traditionnel où tout ce qui se trouve à l’intérieur du réseau est considéré comme sûr, le Zero Trust considère que chaque utilisateur, appareil ou application peut représenter une menace, même à l’intérieur du réseau de l’entreprise.
-
-</p>
-
-    <p>🔐 <strong>Les principes du Zero Trust</strong></p>
-
-    <p>Le modèle Zero Trust repose sur plusieurs principes fondamentaux :</p>
     <ul>
       <li>Authentification forte (MFA)</li>
-      <li>Vérification systématique de l’identité</li>
       <li>Principe du moindre privilège</li>
-      <li>Segmentation du réseau</li>
-      <li>Surveillance continue</li>
+      <li>Segmentation réseau</li>
+      <li>Vérification continue des identités et des équipements</li>
+      <li>Surveillance et journalisation permanente</li>
     </ul>
-    <p>L’objectif est de limiter au maximum les accès et de réduire l’impact d’une éventuelle compromission.</p>
 
-    <p>🌍 <strong>Pourquoi le Zero Trust est devenu indispensable ?</strong></p>
-    <p>Le Zero Trust est devenu essentiel avec :</p>
+    <h2>💡 Pourquoi ce choix ?</h2>
+    <p>
+      J’ai choisi ce sujet car le modèle Zero Trust est aujourd’hui au cœur
+      des stratégies de cybersécurité des entreprises.
+    </p>
     <ul>
-      <li>Le développement du télétravail</li>
-      <li>L’utilisation massive du cloud</li>
-      <li>La multiplication des cyberattaques</li>
-      <li>Les ransomwares</li>
-      <li>Les menaces internes</li>
+      <li>Développement massif du télétravail</li>
+      <li>Utilisation croissante des environnements cloud</li>
+      <li>Augmentation des attaques par ransomware</li>
+      <li>Disparition du périmètre réseau traditionnel</li>
+    </ul>
+    <p>
+      Les grands acteurs du numérique comme Microsoft, Google et Cisco
+      intègrent désormais ce modèle dans leurs architectures de sécurité.
+    </p>
+
+    <p>Ce sujet est directement lié à l’option SISR, car il impacte :</p>
+    <ul>
+      <li>L’administration Active Directory</li>
+      <li>La gestion des identités et des accès</li>
+      <li>La segmentation VLAN</li>
+      <li>La sécurisation des accès distants</li>
+      <li>La configuration des GPO</li>
     </ul>
 
-    <p>En 2021, le président Joe Biden a signé un décret renforçant la cybersécurité des administrations américaines et encourageant l’adoption du modèle Zero Trust.</p>
+    <h2>🚀 Apports professionnels</h2>
+    <ul>
+      <li>Compréhension des nouvelles architectures sécurisées</li>
+      <li>Anticipation des besoins futurs en entreprise</li>
+      <li>Lien direct avec mes missions E5 et E6</li>
+      <li>Approfondissement des notions d’identité et de contrôle d’accès</li>
+    </ul>
 
-<p> Aujourd’hui, de grandes entreprises comme :</p>
-<ul>
-    <li>Microsoft</li>
-    <li>Google</li>
-    <li>Cisco</li>
-</ul>
+    <h2>🛠️ Méthodologie de veille</h2>
 
-<p>développent et proposent des solutions basées sur cette architecture.</p>
+    <h3>1️⃣ Définition des axes de recherche</h3>
+    <ul>
+      <li>Zero Trust Security</li>
+      <li>Zero Trust Architecture</li>
+      <li>NIST 800-207</li>
+      <li>Micro-segmentation</li>
+      <li>MFA</li>
+      <li>Identity Security</li>
+      <li>SASE</li>
+    </ul>
 
-    <p>🛠️ <strong>Comment j’ai procédé ?</strong></p>
-    <p>Pour réaliser ma veille technologique sur le Zero Trust Security, j’ai utilisé plusieurs outils :</p>
-   
-    <p>📌 <strong>Feedly (flux d’info sur Zero Trust)</strong></p>
-      <p>J’ai créé un flux d’information avec les mots-clés :</p>
-      <ul>
-        <li>Zero Trust Security</li>
-        <li>Zero Trust Architecture</li>
-        <li>Cybersécurité</li>
-        <li>Sécurité réseau</li>
-      </ul>
+    <h3>2️⃣ Outils utilisés</h3>
 
-      <p>Cela me permet de consulter chaque jour les nouveaux articles publiés sur le sujet.</p>
-     
- <p>📌 <strong> Google Alertes</strong></p>
- <p>J’ai configuré une alerte avec le mot-clé « Zero Trust Security » afin de recevoir quotidiennement les articles récents liés à ce thème.</p>
-<p>Ces outils me permettent de suivre l’actualité, identifier les nouvelles tendances et comprendre les évolutions liées à ce modèle de sécurité.</p>
+    <h4>📌 Feedly</h4>
+    <ul>
+      <li>Centralisation des flux RSS cybersécurité</li>
+      <li>Tri automatique des articles récents</li>
+      <li>Gain de temps dans la sélection des informations pertinentes</li>
+    </ul>
 
-    <p>📅 <strong>À retenir – Timeline</strong></p>
-   <ul>
-  <li class="timeline-item">2010 : Création du concept Zero Trust par John Kindervag chez Forrester Research.</li>
-  <li class="timeline-item">2020 : Accélération de l’adoption du Zero Trust avec la généralisation du télétravail pendant la pandémie.</li>
-  <li class="timeline-item">2021 : Déploiement d’une stratégie Zero Trust dans les administrations américaines.</li>
-  <li class="timeline-item">2022–2025 : Adoption massive par les grandes entreprises et intégration dans les solutions cloud et réseaux modernes.</li>
-</ul>
+    <h4>📌 Google Alertes</h4>
+    <ul>
+      <li>Alertes automatiques quotidiennes</li>
+      <li>Suivi des nouvelles publications</li>
+      <li>Identification des tendances émergentes</li>
+    </ul>
 
-    <p>🎯 <strong>Conclusion :</strong></p>
-    <p>Le Zero Trust Security représente une évolution majeure dans la manière de concevoir la cybersécurité.</p>
-<p>Ce modèle répond aux nouveaux enjeux liés au cloud, au travail hybride et à l’augmentation constante des cyberattaques.</p>
-<p>Pour un étudiant en BTS SIO option SISR, comprendre le Zero Trust est un véritable atout, car il impacte directement l’architecture réseau, la gestion des accès et la sécurisation des systèmes d’information.</p>
+    <h3>3️⃣ Organisation et automatisation</h3>
+    <ul>
+      <li>Classement des articles par thème (Cloud, Identité, Réseau)</li>
+      <li>Archivage des documents importants</li>
+      <li>Création d’une timeline d’évolution du modèle</li>
+      <li>Sélection de sources fiables et institutionnelles</li>
+    </ul>
 
-    <!-- Images -->
+    <h3>4️⃣ Validation des sources</h3>
+    <ul>
+      <li>Publications officielles</li>
+      <li>Livres blancs techniques</li>
+      <li>Documentation éditeurs</li>
+      <li>Blogs spécialisés cybersécurité</li>
+    </ul>
+
+    <!-- =====================
+         VEILLE IMAGES
+    ===================== -->
     <div class="veille-images">
-      <img src="images/zero-trust-diagram1.png" alt="Diagramme Zero Trust" loading="lazy" />
-      <img src="images/zero-trust-diagram2.png" alt="Architecture Zero Trust" loading="lazy" />
+      <figure>
+        <img src="images/Zero_Trust_Security.avif" alt="Diagramme Zero Trust" class="zoomable" loading="lazy" />
+        <figcaption>Schéma simplifié du modèle Zero Trust Security : "Ne jamais faire confiance, toujours vérifier".</figcaption>
+      </figure>
+      <figure>
+        <img src="images/Architecture_Zero_Trust.png" alt="Architecture Zero Trust" class="zoomable" loading="lazy" />
+        <figcaption>Processus méthodologique : définition des mots-clés, outils automatisés, tri et analyse.</figcaption>
+      </figure>
     </div>
+
   </section>
+
+  <!-- =====================
+       LIGHTBOX
+  ===================== -->
+  <div id="lightbox-overlay">
+    <img src="" alt="Image agrandie" />
+  </div>
+
+  <script>
+    // Lightbox
+    const zoomImages = document.querySelectorAll('.zoomable');
+    const overlay = document.getElementById('lightbox-overlay');
+    const overlayImg = overlay.querySelector('img');
+
+    zoomImages.forEach(img => {
+      img.addEventListener('click', () => {
+        overlayImg.src = img.src;
+        overlay.style.display = 'flex';
+      });
+    });
+
+    overlay.addEventListener('click', () => {
+      overlay.style.display = 'none';
+      overlayImg.src = '';
+    });
+
+    // Menu toggle mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.header nav');
+
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    // Fermer le menu après clic sur un lien
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
