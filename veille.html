@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veille Technologique - Antoine Pageot</title>
+  <meta name="description" content="Veille technologique BTS SIO SISR - Zero Trust Security - Antoine Pageot" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .veille-hero {
+      background: linear-gradient(135deg, #1e1e1e 0%, #2c2c2c 100%);
+      color: #fff;
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+    .veille-hero h1 {
+      font-size: 2rem;
+      color: #f39c12;
+      margin-bottom: 10px;
+    }
+    .veille-hero p {
+      font-size: 1.1rem;
+      color: #ccc;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .veille-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 50px 20px 80px;
+    }
+    .veille-section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #222;
+      border-left: 5px solid #f39c12;
+      padding-left: 14px;
+      margin: 50px 0 20px;
+    }
+    /* Fiche de veille */
+    .fiche-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+      margin-bottom: 28px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .fiche-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.13);
+    }
+    .fiche-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 22px;
+      background: #fafafa;
+      border-bottom: 1px solid #eee;
+      flex-wrap: wrap;
+    }
+    .fiche-num {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #f39c12;
+      background: rgba(243,156,18,0.12);
+      border: 1px solid rgba(243,156,18,0.3);
+      border-radius: 5px;
+      padding: 3px 9px;
+      white-space: nowrap;
+    }
+    .fiche-header h3 {
+      margin: 0;
+      font-size: 1rem;
+      color: #222;
+      flex: 1;
+    }
+    .badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    .badge-critique { background: #fde8e8; color: #c0392b; border: 1px solid #f5c6cb; }
+    .badge-eleve    { background: #fef3e2; color: #d35400; border: 1px solid #fad7a0; }
+    .badge-moyen    { background: #fef9e7; color: #b7950b; border: 1px solid #f9e79f; }
+    .fiche-body {
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .fiche-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 0.88rem;
+    }
+    .meta-item { display: flex; flex-direction: column; gap: 2px; }
+    .meta-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: #999; font-weight: 700; }
+    .meta-value { color: #333; }
+    .meta-value a { color: #f39c12; text-decoration: none; }
+    .meta-value a:hover { text-decoration: underline; }
+    .fiche-field { display: flex; flex-direction: column; gap: 5px; }
+    .field-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #f39c12;
+    }
+    .field-label.danger  { color: #c0392b; }
+    .field-label.action  { color: #d35400; }
+    .field-label.lien    { color: #27ae60; }
+    .field-text {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.65;
+    }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 7px; }
+    .tag {
+      font-size: 0.78rem;
+      padding: 3px 9px;
+      border-radius: 4px;
+      background: #f5f5f5;
+      border: 1px solid #e0e0e0;
+      color: #666;
+    }
+    hr.fiche-sep { border: none; border-top: 1px solid #f0f0f0; }
+    /* Méthodo grid */
+    .methodo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 10px;
+    }
+    .methodo-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      padding: 18px;
+    }
+    .methodo-card h4 {
+      color: #f39c12;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+    .methodo-card ul {
+      padding-left: 18px;
+      margin: 0;
+      font-size: 0.92rem;
+      color: #555;
+    }
+    .methodo-card ul li { margin-bottom: 5px; }
+    /* Sources */
+    .sources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .source-pill {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 0.88rem;
+    }
+    .source-pill strong { color: #f39c12; display: block; margin-bottom: 3px; }
+    .source-pill span { color: #888; font-size: 0.8rem; }
+    @media (max-width: 600px) {
+      .fiche-header { flex-direction: column; align-items: flex-start; }
+      .fiche-meta { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/logo.jpg" alt="Logo Pageot" loading="lazy" />
+        <p class="brand">Antoine Pageot</p>
+      </a>
+    </div>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <nav aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html#hero">Accueil</a></li>
+        <li><a href="index.html#about">Profil</a></li>
+        <li><a href="index.html#skills">Compétences</a></li>
+        <li><a href="index.html#e5">E5 - Missions</a></li>
+        <li><a href="veille.html">Veille technologique</a></li>
+        <li><a href="index.html#e6">E6 - Épreuve pratique</a></li>
+        <li><a href="index.html#certifications">Certifications</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <div class="veille-hero">
+    <h1>Veille Technologique</h1>
+    <p>BTS SIO option SISR · Sujet : <strong style="color:#f39c12;">Zero Trust Security</strong><br>
+    « Ne jamais faire confiance, toujours vérifier »</p>
+  </div>
+
+  <div class="veille-content">
+
+    <!-- PRÉSENTATION DU SUJET -->
+    <div class="project-card">
+      <h3>Présentation du sujet</h3>
+      <p>
+        Ma veille technologique porte sur le modèle <strong>Zero Trust Security</strong>, une approche moderne 
+        de cybersécurité formalisée dans la publication <strong>NIST Special Publication 800-207</strong>.
+        Ce modèle part d'un constat simple : les périmètres réseau traditionnels (pare-feu, VPN) ne suffisent 
+        plus face aux environnements hybrides cloud/on-premise et à la généralisation du télétravail.
+      </p>
+      <h3>Pourquoi ce sujet ?</h3>
+      <ul>
+        <li>Développement massif du télétravail et des environnements cloud</li>
+        <li>Augmentation des attaques par ransomware ciblant les AD et les identités</li>
+        <li>Adoption par Microsoft, Google, Cisco comme standard de référence</li>
+        <li>Lien direct avec mes missions E5/E6 : AD, GPO, permissions NTFS, MFA</li>
+      </ul>
+    </div>
+
+    <!-- MÉTHODOLOGIE -->
+    <div class="veille-section-title">Méthodologie de veille</div>
+    <div class="methodo-grid">
+      <div class="methodo-card">
+        <h4>Mots-clés suivis</h4>
+        <ul>
+          <li>Zero Trust Security</li>
+          <li>Zero Trust Architecture</li>
+          <li>NIST 800-207</li>
+          <li>Micro-segmentation</li>
+          <li>MFA / Identity Security</li>
+          <li>SASE / CVE Active Directory</li>
+        </ul>
+      </div>
+      <div class="methodo-card">
+        <h4>Feedly</h4>
+        <ul>
+          <li>Centralisation des flux RSS</li>
+          <li>Collections : Sécurité, Réseau, Actualité tech</li>
+          <li>Tri automatique des articles</li>
+        </ul>
+      </div>
+      <div class="methodo-card">
+        <h4>Google Alertes</h4>
+        <ul>
+          <li>Alertes quotidiennes automatiques</li>
+          <li>Suivi des nouvelles publications</li>
+          <li>Identification des tendances</li>
+        </ul>
+      </div>
+      <div class="methodo-card">
+        <h4>Sources institutionnelles</h4>
+        <ul>
+          <li>ANSSI – cert.ssi.gouv.fr</li>
+          <li>NIST – nvd.nist.gov</li>
+          <li>Microsoft Security (MSRC)</li>
+          <li>The Hacker News</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FICHES DE VEILLE -->
+    <div class="veille-section-title">Journal de veille – Fiches de synthèse</div>
+
+    <!-- FICHE 1 -->
+    <div class="fiche-card">
+      <div class="fiche-header">
+        <span class="fiche-num">Fiche #01</span>
+        <h3>Publication NIST SP 800-207 — Formalisation du modèle Zero Trust Architecture</h3>
+        <span class="badge badge-moyen">Moyen</span>
+      </div>
+      <div class="fiche-body">
+        <div class="fiche-meta">
+          <div class="meta-item">
+            <span class="meta-label">Date de veille</span>
+            <span class="meta-value">14/10/2024</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Source</span>
+            <span class="meta-value"><a href="https://doi.org/10.6028/NIST.SP.800-207" target="_blank">NIST – SP 800-207</a></span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Thème</span>
+            <span class="meta-value">Architecture Zero Trust</span>
+          </div>
+        </div>
+        <hr class="fiche-sep">
+        <div class="fiche-field">
+          <span class="field-label">Résumé</span>
+          <p class="field-text">Le NIST a publié la SP 800-207, référence officielle du modèle Zero Trust Architecture. Elle définit 7 principes fondamentaux : vérification systématique des identités, accès au moindre privilège, inspection de tous les flux, micro-segmentation, refus implicite par défaut, et authentification continue. Trois approches d'implémentation sont distinguées : basée sur l'identité (IAM), sur le réseau (micro-segmentation), ou sur les données.</p>
+        </div>
+        <div class="fiche-field">
+          <span class="field-label danger">Impact</span>
+          <p class="field-text">Toutes les entreprises utilisant un modèle de confiance implicite basé sur le périmètre réseau traditionnel. Ce standard redéfinit la manière d'administrer les accès au sein d'un Active Directory et des politiques GPO.</p>
+        </div>
+        <div class="fiche-field">
+          <span class="field-label action">Action recommandée</span>
+          <p class="field-text">Revoir la segmentation des accès dans l'AD (groupes, OU, délégation), renforcer les politiques MFA, documenter tous les flux entre ressources. Conserver la SP 800-207 comme référence pour tout projet d'infrastructure sécurisée.</p>
+        </div>
+        <div class="fiche-field">
+          <span class="field-label lien">Lien avec ma formation</span>
+          <p class="field-text">Directement lié à ma mission E5 & E6 chez IPACS : la création des OU, groupes, GPO et la gestion des permissions NTFS s'inscrit dans la logique du principe du moindre privilège défini par NIST 800-207.</p>
+        </div>
+        <div class="fiche-field">
+          <span class="field-label">Mots-clés</span>
+          <div class="tag-row">
+            <span class="tag">Zero Trust</span><span class="tag">NIST 800-207</span>
+            <span class="tag">micro-segmentation</span><span class="tag">IAM</span>
+            <span class="tag">moindre privilège</span><span class="tag">MFA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FICHE 2 -->
+    <div class="fiche-card">
+      <div class="fiche-header">
+        <span class="fiche-num">Fiche #02</span>
+        <h3>Microsoft Entra ID – Évolution d'Azure AD vers une plateforme d'identité Zero Trust</h3>
+        <span class="badge badge-eleve">Élevé</span>
+      </div>
+      <div class="fiche-body">
+        <div class="fiche-meta">
+          <div class="meta-item">
+            <span class="meta-label">Date de veille</span>
+            <span class="meta-value">06/03/2025</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Source</span>
+            <span class="meta-value"><a href="https://learn.microsoft.com/fr-fr/entra/fundamentals/whatis" target="_blank">Microsoft Learn – Entra ID</a></span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Thème</span>
+            <span class="meta-value">Identité & Zero Trust</span>
+          </div>
+        </div>
+        <hr class="fiche-sep">
+        <div class="fiche-field">
+          <span class="field-label">Résumé</span>
+          <p class="field-text">Microsoft a renommé Azure Active Directory en Microsoft Entra ID et continue d'enrichir la plateforme pour en faire le socle de sa stratégie Zero Trust. Entra ID intègre nativement le MFA, l'accès conditionnel (Conditional Access), la protection des identités (Identity Protection), la gestion des accès privilégiés (PIM) et le SSO. Elle permet de mettre en œuvre le principe "ne jamais faire confiance, toujours vérifier" à l'échelle d'un domaine hybride.</p>
+        </div>
+        <div class="fiche-field">
+          <span class="field-label danger">Impact</span>
+          <p class="field-text">Les entreprises utilisant Windows Server avec Active Directory et souhaitant étendre leur gestion des identités vers le cloud. L'accès conditionnel peut bloquer ou autoriser des connexions selon le niveau de risque ou le type de terminal. Les comptes administrateurs sont directement ciblés par PIM pour éviter les élévations permanentes de droits.</p>
+        </div>
+        <div class="fiche-field">
+          <span class="field-label action">Action recommandée</span>
+          <p class="field-text">Activer le MFA pour tous les comptes, en priorité les administrateurs. Mettre en place des politiques d'accès conditionnel pour les accès distants. Utiliser PIM pour que les élévations de droits soient temporaires et tracées.</p>
+        </div>
+        <div class="fiche-field">
+          <span class="field-label lien">Lien avec ma formation</span>
+          <p class="field-text">Chez IPACS, l'infrastructure repose sur un AD on-premise (Windows Server 2025). Ce sujet m'a permis de comprendre comment faire évoluer cet environnement vers un modèle hybride. La création des groupes et OU dans ma mission E5 préfigure une future intégration Entra ID.</p>
+        </div>
+        <div class="fiche-field">
+          <span class="field-label">Mots-clés</span>
+          <div class="tag-row">
+            <span class="tag">Microsoft Entra ID</span><span class="tag">Azure AD</span>
+            <span class="tag">MFA</span><span class="tag">Conditional Access</span>
+            <span class="tag">PIM</span><span class="tag">SSO</span><span class="tag">AD hybride</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FICHE 3 -->
+    <div class="fiche-card">
+      <div class="fiche-header">
+        <span class="fiche-num">Fiche #03</span>
+        <h3>CVE-2024-49113 – Faille critique Windows LDAP (CVSS 9.8) – Contrôleurs de domaine AD</h3>
+        <span class="badge badge-critique">Critique</span>
+      </div>
+      <div class="fiche-body">
+        <div class="fiche-meta">
+          <div class="meta-item">
+            <span class="meta-label">Date de veille</span>
+            <span class="meta-value">18/11/2025</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Source</span>
+            <span class="meta-value">
+              <a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-49113" target="_blank">MSRC Microsoft</a> ·
+              <a href="https://www.cert.ssi.gouv.fr" target="_blank">CERT-FR</a>
+            </span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Thème</span>
+            <span class="meta-value">Sécurité AD / CVE</span>
+          </div>
+        </div>
+        <hr class="fiche-sep">
+        <div class="fiche-field">
+          <span class="field-label">Résumé</span>
+          <p class="field-text">Une vulnérabilité critique de type Remote Code Execution (RCE) a été découverte dans le service Windows LDAP, composant central de l'Active Directory. Référencée CVE-2024-49113 avec un score CVSS de 9.8, elle permet à un attaquant non authentifié d'exécuter du code arbitraire à distance sur un contrôleur de domaine via un paquet LDAP malformé. Les versions affectées couvrent Windows Server 2019, 2022 et 2025. Correctif publié dans le Patch Tuesday de décembre 2024.</p>
+        </div>
+        <div class="fiche-field">
+          <span class="field-label danger">Impact</span>
+          <p class="field-text">Tous les contrôleurs de domaine exposant le port LDAP (389/TCP) sans filtrage réseau. Une compromission entraîne la prise de contrôle totale de l'Active Directory. Cette faille illustre pourquoi le modèle Zero Trust interdit de supposer qu'un réseau interne est sécurisé.</p>
+        </div>
+        <div class="fiche-field">
+          <span class="field-label action">Action recommandée</span>
+          <p class="field-text">Appliquer le correctif Microsoft KB5048667 (Patch Tuesday décembre 2024). Restreindre l'accès aux ports LDAP/LDAPS aux seules machines autorisées. Activer la journalisation des événements LDAP. Mettre en place une supervision des tentatives d'authentification anormales.</p>
+        </div>
+        <div class="fiche-field">
+          <span class="field-label lien">Lien avec ma formation</span>
+          <p class="field-text">Cette faille concerne directement le Windows Server 2025 déployé chez IPACS dans ma mission E5. J'ai configuré l'Observateur d'événements pour surveiller les accès au domaine ipacs.local. Cette CVE renforce la pertinence du modèle Zero Trust étudié en fiche #01 : exposer un contrôleur de domaine sans micro-segmentation contredit les principes NIST 800-207.</p>
+        </div>
+        <div class="fiche-field">
+          <span class="field-label">Mots-clés</span>
+          <div class="tag-row">
+            <span class="tag">CVE-2024-49113</span><span class="tag">LDAP</span>
+            <span class="tag">Active Directory</span><span class="tag">RCE</span>
+            <span class="tag">CVSS 9.8</span><span class="tag">Patch Tuesday</span>
+            <span class="tag">Windows Server 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 - Antoine Pageot | Portfolio BTS SIO</p>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.header nav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', nav.classList.contains('active'));
+    });
+    nav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+      nav.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+  </script>
+
+</body>
+</html>
